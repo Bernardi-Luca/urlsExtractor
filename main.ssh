@@ -1,0 +1,1 @@
+read sitename; curl -k -s $sitename | grep href | awk -F "href=" '{print $2}' | cut -d ">" -f "1" | cut -c 2- | cut -d '"' -f 1 | grep -v "javascript" | grep -v "\#" | sort -u | uniq -c
